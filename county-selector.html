@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>County Selector</title>
+</head>
+<body>
+    <h1>Selectează Județ</h1>
+    <select id="countyDropdown">
+        <!-- County options will go here -->
+        <option value="21">Alba</option>
+        <option value="29">Arad</option>
+        <option value="23">Argeș</option>
+        <option value="2">Bacău</option>
+        <option value="25">Bihor</option>
+        <option value="4">Bistrița-Năsăud</option>
+        <option value="7">Botoșani</option>
+        <option value="10">Brăila</option>
+        <option value="8">Brașov</option>
+        <option value="9">București</option>
+        <option value="16">Buzău</option>
+        <option value="24">Călărași</option>
+        <option value="31">Caraș-Severin</option>
+        <option value="20">Cluj</option>
+        <option value="34">Constanța</option>
+        <option value="13">Covasna</option>
+        <option value="5">Dâmbovița</option>
+        <option value="1">Dolj</option>
+        <option value="32">Galați</option>
+        <option value="22">Giurgiu</option>
+        <option value="33">Gorj</option>
+        <option value="3">Harghita</option>
+        <option value="11">Hunedoara</option>
+        <option value="30">Ialomița</option>
+        <option value="26">Iași</option>
+        <option value="18">Ilfov</option>
+        <option value="36">Maramureș</option>
+        <option value="37">Mehedinți</option>
+        <option value="40">Mureș</option>
+        <option value="19">Neamț</option>
+        <option value="42">Olt</option>
+        <option value="17">Prahova</option>
+        <option value="38">Sălaj</option>
+        <option value="35">Satu Mare</option>
+        <option value="41">Sibiu</option>
+        <option value="6">Suceava</option>
+        <option value="12">Teleorman</option>
+        <option value="15">Timiș</option>
+        <option value="14">Tulcea</option>
+        <option value="27">Vâlcea</option>
+        <option value="39">Vaslui</option>
+        <option value="28">Vrancea</option>
+    </select>
+    <button id="sendButton">Send</button>
+    <script>
+        // Your existing JavaScript code here for populating the dropdown
+        var counties = [
+        { "id": 21, "name": "Alba" },
+            { "id": 29, "name": "Arad" },
+            { "id": 23, "name": "Argeș" },
+            { "id": 2, "name": "Bacău" },
+            { "id": 25, "name": "Bihor" },
+            { "id": 4, "name": "Bistrița-Năsăud" },
+            { "id": 7, "name": "Botoșani" },
+            { "id": 10, "name": "Brăila" },
+            { "id": 8, "name": "Brașov" },
+            { "id": 9, "name": "București" },
+            { "id": 16, "name": "Buzău" },
+            { "id": 24, "name": "Călărași" },
+            { "id": 31, "name": "Caraș-Severin" },
+            { "id": 20, "name": "Cluj" },
+            { "id": 34, "name": "Constanța" },
+            { "id": 13, "name": "Covasna" },
+            { "id": 5, "name": "Dâmbovița" },
+            { "id": 1, "name": "Dolj" },
+            { "id": 32, "name": "Galați" },
+            { "id": 22, "name": "Giurgiu" },
+            { "id": 33, "name": "Gorj" },
+            { "id": 3, "name": "Harghita" },
+            { "id": 11, "name": "Hunedoara" },
+            { "id": 30, "name": "Ialomița" },
+            { "id": 26, "name": "Iași" },
+            { "id": 18, "name": "Ilfov" },
+            { "id": 36, "name": "Maramureș" },
+            { "id": 37, "name": "Mehedinți" },
+            { "id": 40, "name": "Mureș" },
+            { "id": 19, "name": "Neamț" },
+            { "id": 42, "name": "Olt" },
+            { "id": 17, "name": "Prahova" },
+            { "id": 38, "name": "Sălaj" },
+            { "id": 35, "name": "Satu Mare" },
+            { "id": 41, "name": "Sibiu" },
+            { "id": 6, "name": "Suceava" },
+            { "id": 12, "name": "Teleorman" },
+            { "id": 15, "name": "Timiș" },
+            { "id": 14, "name": "Tulcea" },
+            { "id": 27, "name": "Vâlcea" },
+            { "id": 39, "name": "Vaslui" },
+            { "id": 28, "name": "Vrancea" }
+        ];
+
+        function populateDropdown() {
+            var dropdown = document.getElementById('countyDropdown');
+            counties.forEach(function(county) {
+                var option = document.createElement('option');
+                option.value = county.id;
+                option.textContent = county.name;
+                dropdown.appendChild(option);
+            });
+        }
+
+        populateDropdown();
+
+        // Event listener for the Send button
+        document.getElementById('sendButton').addEventListener('click', function() {
+            var selectedCountyId = document.getElementById('countyDropdown').value;
+            console.log("Selected County ID: " + selectedCountyId);
+            // Here you would typically send the selectedCountyId to Voiceflow or your server-side function
+            // For example, using fetch() to send it to a server or an API endpoint
+        });
+    </script>
+</body>
+</html>
